@@ -3,7 +3,7 @@ const path = require('path');
 
 (async () => {
   // Path to your Chrome profile on macOS
-  const userDataDir = path.join('/Users/<your_username>/Library/Application Support/Google/Chrome');
+  const userDataDir = path.join('/Users/jamescoates/Library/Application Support/Google/Chrome');
 
   // Launch Puppeteer with your existing Chrome profile
   const browser = await puppeteer.launch({
@@ -14,7 +14,7 @@ const path = require('path');
   });
 
   const page = await browser.newPage();
-  await page.goto('https://www.instagram.com/your_username/saved/');  // Change this to "liked" if needed
+  await page.goto('https://www.instagram.com/jamescoates_19/saved/');  // Change this to "liked" if needed
 
   // Wait for the page to load
   await page.waitForTimeout(5000);
