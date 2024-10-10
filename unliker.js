@@ -17,12 +17,13 @@ const path = require('path');
   await page.goto('https://www.instagram.com/jamescoates_19/saved/');  // Change this to "liked" if needed
 
   // Wait for the page to load
-  await page.waitForTimeout(5000);
+  await new Promise(resolve => setTimeout(resolve, 5000));
+
 
   // Find and click all "Unlike" buttons
   const unlikeButtons = await page.$$(`article button[aria-label="Unlike"]`);
 
-  let maxUnlikesPerHour = 100;  // Set the limit for unlikes per hour
+  let maxUnlikesPerHour = 2;  // Set the limit for unlikes per hour
   let unlikedCount = 0;
 
   for (const button of unlikeButtons) {
